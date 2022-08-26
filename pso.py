@@ -195,7 +195,7 @@ def makeGray(img):
 
 #returns a 1d array and two dimention 
 def create_image(K):
-    path1="/home/susovan/Downloads/t1_icbm_normal_1mm_pn3_rf20.rawb"
+    path1="./t1_icbm_normal_1mm_pn3_rf20.rawb"
     f=open(path1,"rb")
     f1=f.read()
     img=[]
@@ -227,7 +227,7 @@ def show_image(img1,img2,sx,sy,str1="our segmented image(4 clusters)",str2=" ori
 
 
 def accuracy_4(x,z,sx,sy):  
-    path2="/home/susovan/Downloads/phantom_1.0mm_normal_crisp.rawb"
+    path2="./phantom_1.0mm_normal_crisp.rawb"
     f2=open(path2,"rb")
     f2=f2.read()
     img=[]
@@ -263,7 +263,7 @@ def accuracy_4(x,z,sx,sy):
     accuracy=((true_point*100)/no_of_point)
     
     print("accuracy is {}%".format(accuracy)) 
-    show_image(z,img1)
+    show_image(z,img1,sx,sy)
 def remove_bg(img_bg,it,sx,sy):
     new_img=img_bg.copy()
     factor=1
@@ -332,7 +332,7 @@ def main():
         pso.pso_cluster()
         final_image=pso.final_arr
         show_clusters(final_image,sx,sy)
-        #accuracy_4(img_num,final_image,sx,sy)
+        accuracy_4(img_num,final_image,sx,sy)
 
     
 def show_clusters(final_image,sx,sy):
