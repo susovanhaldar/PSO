@@ -1,1 +1,1 @@
-# this project try to segment brain images using particle swarm optimization techniques.
+# this project try to segment brain images using particle swarm optimization technique.
